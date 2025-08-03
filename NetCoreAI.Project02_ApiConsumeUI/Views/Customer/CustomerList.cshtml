@@ -1,0 +1,39 @@
+﻿@model List<NetCoreAI.Project02_ApiConsumeUI.Dtos.ResultCustomerDto>
+@{
+    ViewData["Title"] = "CustomerList";
+}
+
+<h1>CustomerList</h1>
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Musteri Adi Soyadi</th>
+            <th>Bakiye</th>
+            <th>sil</th>
+            <th>Guncelle</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerId</td>
+                <td>@item.CustomerName @item.CustomerSurname</td>
+                <td>@item.CustomerBalance</td>
+                <td><a href="/Customer/DeleteCustomer/@item.CustomerId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Customer/UpdateCustomer/@item.CustomerId" class="btn btn-succes">Guncelle</a></td>
+            </tr>
+        }
+    </table>
+
+    <a href="/Customer/CreateCustomer/" class="btn btn-primary">Yeni Musteri Girisi</a>
+
+</div>
+

@@ -1,0 +1,21 @@
+﻿@model NetCoreAI.Project02_ApiConsumeUI.Dtos.CreateCustomerDto
+@{
+    ViewData["Title"] = "CreateCustomer";
+}
+
+<h1>CreateCustomer</h1>
+<form method="post">
+<div class="cntainer">
+    <br /><br />
+<label>Musteri Adi</label>
+<input type="text" asp-for="CustomerName" class="form-control" />
+<br/>
+<label>Musteri Soyadi</label>
+<input type="text" asp-for="CustomerSurname" class="form-control" />
+<br/>
+    <label>Musteri Bakiye</label>
+    <input type="text" asp-for="CustomerBalance" class="form-control" />
+   <br/>
+   <button class="btn btn-primary">Musteri olustur</button>
+</div>
+</form>
